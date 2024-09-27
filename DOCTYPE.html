@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla Inicial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-screen">
+        <h1>Pantalla Inicial</h1>
+        <p>¿Quieres hacer algo?</p>
+        <button onclick="showOptions()">Sí</button>
+        <button onclick="goBack()">No</button>
+    </div>
+
+    <div class="container" id="options-screen" style="display:none;">
+        <h1>Opciones</h1>
+        <p>Selecciona una opción:</p>
+        <button onclick="alert('Opción 1 seleccionada')">Opción 1</button>
+        <button onclick="alert('Opción 2 seleccionada')">Opción 2</button>
+        <button onclick="alert('Opción 3 seleccionada')">Opción 3</button>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+    <script>
+        function showOptions() {
+            document.getElementById('main-screen').style.display = 'none';
+            document.getElementById('options-screen').style.display = 'block';
+        }
+
+        function goBack() {
+            document.getElementById('options-screen').style.display = 'none';
+            document.getElementById('main-screen').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
